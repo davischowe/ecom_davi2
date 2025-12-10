@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script src="../js/listEstoque.js" defer></script>
+
+    <title>Admin • Listar Estoque</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <div class="container admin-header-content">
+            <div class="admin-logo">
+                <h1>
+                    <i class="ri-archive-line"></i>
+                    Admin • Estoque
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="./estoque.html">Estoque</a></li>
+            <li><a href="./listEstoq.html" class="active">Listar Estoque</a></li>
+            <li>
+                <a href="./produto.html">
+                    <i class="ri-arrow-go-back-line"></i>
+                    Voltar ao Admin Controller
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <section class="admin-section">
+                <h2>
+                    <i class="ri-list-check-2"></i>
+                    Listagem do Movimento de Estoque
+                </h2>
+
+                <p class="info-text">
+                    Visualize todos os registros de entrada e saída do estoque.
+                </p>
+
+                <button id="listEstoq" class="admin-btn">
+                    <i class="ri-refresh-line"></i>
+                    Listar Movimentos
+                </button>
+
+                <div class="admin-table-container">
+                    <div id="resTabela"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>

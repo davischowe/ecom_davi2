@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="../js/login.js" defer></script>
+
+    <title>Login - Lojas Brasileiras</title>
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container-log">
+        <div class="auth-card">
+
+            <div class="auth-header">
+                <h1>
+                    <i class="ri-global-line"></i>
+                    Lojas Brasileiras
+                </h1>
+                <p>Entrar na sua conta</p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required placeholder="Sua senha">
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <i class="ri-login-box-line"></i> Entrar
+                </button>
+
+            </form>
+
+            <div class="auth-links">
+                <p>Não tem conta? <a href="registrar.html">Cadastre-se</a></p>
+                <p><a href="../index.html">Voltar ao início</a></p>
+            </div>
+
+            <div id="resLogin" class="message"></div>
+
+        </div>
+    </div>
+
+</body>
+</html>

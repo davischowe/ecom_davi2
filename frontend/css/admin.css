@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.admin-header {
+    background: #0f172a;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.admin-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo h1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #38bdf8;
+}
+
+/* NAV */
+.admin-nav {
+    background: #1e293b;
+}
+
+.admin-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 12px;
+    margin: 0;
+}
+
+.admin-nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.admin-nav a.active,
+.admin-nav a:hover {
+    color: #38bdf8;
+}
+
+/* MAIN */
+.admin-main {
+    padding: 30px 0;
+}
+
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* SECTION */
+.admin-section {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.admin-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.admin-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 20px;
+}
+
+.admin-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+}
+
+.admin-form-group.full {
+    grid-column: 1 / -1;
+}
+
+/* BTN */
+.admin-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #38bdf8;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MENSAGEM */
+.admin-message {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* TABELA */
+.admin-table-container {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+/* ===========================
+   ADMIN NAV
+=========================== */
+
+.admin-nav {
+    background: #0f172a; /* azul escuro */
+    border-top: 1px solid #1e293b;
+}
+
+.admin-nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+}
+
+/* cada item */
+.admin-nav li {
+    flex-shrink: 0;
+}
+
+/* links */
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 12px 16px;
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #cbd5f5;
+    text-decoration: none;
+
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* ícones */
+.admin-nav a i {
+    font-size: 1.1rem;
+}
+
+/* hover */
+.admin-nav a:hover {
+    background: rgba(99, 102, 241, 0.15);
+    color: #ffffff;
+}
+
+/* ativo */
+.admin-nav a.active {
+    background: #6366f1; /* indigo */
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media (max-width: 768px) {
+    .admin-nav ul {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .admin-nav a {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+}
+/* =====================================
+   LISTAGEM DE ESTOQUE (ADMIN)
+===================================== */
+
+.info-text {
+    margin-bottom: 16px;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* botão reaproveitando padrão admin */
+.admin-btn {
+    margin-bottom: 20px;
+}
+
+/* tabela */
+.admin-table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.admin-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table-container th,
+.admin-table-container td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.admin-table-container th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.admin-table-container tr:hover {
+    background: #f1f5f9;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+    .admin-section h2 {
+        font-size: 1.1rem;
+    }
+}
+

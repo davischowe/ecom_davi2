@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="../js/consProduto.js" defer></script>
+    <title>Admin • Consultar Produto</title>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container admin-header-content">
+
+            <div class="admin-logo">
+                <h1>
+                    <i class="ri-search-line"></i>
+                    Admin • Lojas Brasileiras
+                </h1>
+            </div>
+
+            <div class="admin-user-info">
+                <i class="ri-user-3-line"></i>
+                <span id="adminUserName"></span>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="./produto.html">Gestão Produto</a></li>
+            <li><a href="./atualProd.html">Atualizar Produto</a></li>
+            <li><a href="./delProd.html">Desativar Produto</a></li>
+            <li><a href="./consultaProd.html" class="active">Consultar Produto</a></li>
+            <li><a href="./estoque.html">Estoque</a></li>
+            <li>
+                <a href="../index.html">
+                    <i class="ri-arrow-go-back-line"></i> Voltar ao Site
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+        <div class="admin-container">
+
+            <section class="admin-section">
+                <h2>
+                    <i class="ri-search-line"></i>
+                    Consultar Produto
+                </h2>
+
+                <p class="info-text">
+                    Digite o código do produto ou parte do nome para buscar.
+                </p>
+
+                <form class="admin-form">
+                    <div class="admin-form-group">
+                        <label for="nome">Código ou Nome do Produto *</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            required
+                            placeholder="Ex: 1 ou Infinity Edge"
+                        >
+                    </div>
+
+                    <div class="admin-form-group">
+                        <button type="submit" id="consProd" class="admin-btn">
+                            <i class="ri-search-line"></i>
+                            Consultar Produto
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resProd" class="admin-message"></div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

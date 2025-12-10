@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./js/app.js" defer></script>
+
+    <title>Lojas Brasileiras</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+
+                <div class="logo">
+                    <h1>
+                        <i class="ri-global-line"></i>
+                        Lojas Brasileiras
+                    </h1>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar produtos pelo mundo inteiro...">
+                    <button id="searchBtn">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <button id="cartBtn" class="cart-btn">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        <span id="cartCount">0</span>
+                    </button>
+
+                    <div class="user-menu">
+                        <a href="./html/login.html" id="loginLink">
+                            <i class="ri-user-line"></i> Login
+                        </a>
+
+                        <div id="userInfo" class="user-info" style="display: none;">
+                            <span id="userName"></span>
+                            <button id="logoutBtn">
+                                <i class="ri-logout-box-r-line"></i> Sair
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Produtos do Brasil para o mundo</h2>
+                <p>Qualidade, preço e estilo em um só lugar</p>
+                <button class="cta-btn" onclick="scrollToProducts()">
+                    <i class="ri-store-2-line"></i> Ver Produtos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- produtos via JS -->
+            </div>
+
+            <div class="loading" id="loading">Carregando produtos...</div>
+            <div class="error" id="error" style="display: none;"></div>
+        </div>
+    </section>
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Carrinho</h3>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-body" id="cartItems">
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0.00</span></strong>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">
+                <i class="ri-secure-payment-line"></i> Finalizar Compra
+            </button>
+        </div>
+    </div>
+    <div id="adminPanel" style="display: none">
+        <button id="adminBtn" class="admin-btn">
+            <i class="ri-settings-3-line"></i> Admin
+        </button>
+    </div>
+
+</body>
+</html>

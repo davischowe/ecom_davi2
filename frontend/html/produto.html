@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS ADMIN -->
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <!-- REMIX ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="../js/cadProduto.js" defer></script>
+
+    <title>Admin - Lojas Brasileiras</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <div class="container admin-header-content">
+            <div class="admin-logo">
+                <h1>
+                    <i class="ri-settings-3-line"></i>
+                    Admin • Lojas Brasileiras
+                </h1>
+            </div>
+            <div class="admin-user-info">
+                <i class="ri-user-3-line"></i>
+                <span id="adminUserName"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="./produto.html" class="active">Gestão Produto</a></li>
+            <li><a href="./atualProd.html">Atualizar Produto</a></li>
+            <li><a href="./delProd.html">Desativar Produto</a></li>
+            <li><a href="./consultaProd.html">Consultar Produto</a></li>
+            <li><a href="./estoque.html">Estoque</a></li>
+            <li><a href="../index.html">
+                <i class="ri-arrow-go-back-line"></i> Voltar ao Site
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+        <div class="admin-container">
+
+            <!-- CADASTRO -->
+            <section class="admin-section">
+                <h2><i class="ri-add-circle-line"></i> Cadastrar Novo Produto</h2>
+
+                <form class="admin-form">
+
+                    <div class="admin-form-group">
+                        <label for="nome">Nome do Produto *</label>
+                        <input type="text" id="nome" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="modelo">Modelo *</label>
+                        <input type="text" id="modelo" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="categoria">Categoria *</label>
+                        <select id="categoria" required>
+                            <option value="">Selecione</option>
+                            <option value="SAUDE">Sáude</option>
+                            <option value="BELEZA">Beleza</option>
+                            <option value="ACESSORIOS">Acessorios</option>
+                            <option value="ALIMENTOS">Alimentos</option>
+                            <option value="OUTROS">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="marca">Marca *</label>
+                        <input type="text" id="marca" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="preco">Preço (R$) *</label>
+                        <input type="number" id="preco" step="0.01" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="imagem_url">URL da Imagem</label>
+                        <input type="text" id="imagem_url">
+                    </div>
+
+                    <div class="admin-form-group full">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" rows="4"></textarea>
+                    </div>
+
+                    <div class="admin-form-group full">
+                        <button type="submit" id="cadProd" class="admin-btn">
+                            <i class="ri-save-line"></i> Cadastrar Produto
+                        </button>
+                    </div>
+
+                </form>
+
+                <div id="resProd" class="admin-message"></div>
+            </section>
+
+            <!-- ESTOQUE -->
+            <section class="admin-section">
+                <h2><i class="ri-archive-line"></i> Gerenciar Estoque</h2>
+
+                <form class="admin-form" id="estoqueForm">
+
+                    <div class="admin-form-group">
+                        <label for="estoqueProdutoId">Código *</label>
+                        <input type="number" id="estoqueProdutoId" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="estoqueAcao">Ação *</label>
+                        <select id="estoqueAcao" required>
+                            <option value="adicionar">Adicionar</option>
+                            <option value="remover">Remover</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="estoqueQuantidade">Quantidade *</label>
+                        <input type="number" id="estoqueQuantidade" min="1" required>
+                    </div>
+
+                    <div class="admin-form-group full">
+                        <button type="submit" class="admin-btn">
+                            <i class="ri-refresh-line"></i> Atualizar Estoque
+                        </button>
+                    </div>
+
+                </form>
+
+                <div id="resEstoque" class="admin-message"></div>
+            </section>
+
+            <!-- REATIVAR -->
+            <section class="admin-section">
+                <h2><i class="ri-loop-left-line"></i> Reativar Produtos</h2>
+
+                <form class="admin-form" id="reativarForm">
+                    <div class="admin-form-group">
+                        <label for="reativarProdutoId">Código *</label>
+                        <input type="number" id="reativarProdutoId" required>
+                    </div>
+
+                    <div class="admin-form-group full">
+                        <button type="submit" class="admin-btn">
+                            <i class="ri-loop-right-line"></i> Reativar Produto
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resReativar" class="admin-message"></div>
+
+                <h3>Produtos Inativos</h3>
+                <div class="admin-table-container">
+                    <div id="resTabelaInativos"></div>
+                </div>
+            </section>
+
+            <!-- LISTA -->
+            <section class="admin-section">
+                <h2><i class="ri-list-check-2"></i> Produtos Cadastrados</h2>
+                <div class="admin-table-container">
+                    <div id="resTabela"></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS ADMIN -->
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <!-- REMIX ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="../js/cadEstoque.js" defer></script>
+
+    <title>Admin • Estoque</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <div class="container admin-header-content">
+            <div class="admin-logo">
+                <h1>
+                    <i class="ri-archive-line"></i>
+                    Admin • Estoque
+                </h1>
+            </div>
+
+            <div class="admin-user-info">
+                <i class="ri-user-3-line"></i>
+                <span id="adminUserName"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="admin-nav">
+        <ul>
+            <li><a href="./estoque.html" class="active">Estoque</a></li>
+            <li><a href="./listEstoq.html">Listar Estoque</a></li>
+            <li>
+                <a href="./produto.html">
+                    <i class="ri-arrow-go-back-line"></i> Voltar ao Admin Controller
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+        <div class="admin-container">
+
+            <section class="admin-section">
+                <h2>
+                    <i class="ri-add-box-line"></i>
+                    Cadastrar Movimento de Estoque
+                </h2>
+
+                <form class="admin-form">
+                    <div class="admin-form-group">
+                        <label for="idUsuario">Código do Usuário *</label>
+                        <input type="number" id="idUsuario" required placeholder="Ex: 1">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="idProduto">Código do Produto *</label>
+                        <input type="number" id="idProduto" required placeholder="Ex: 1">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="data">Data do Movimento *</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="tipo">Tipo de Movimento *</label>
+                        <select id="tipo" required>
+                            <option value="ENTRADA">Entrada</option>
+                            <option value="SAIDA">Saída</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="qtdeMov">Quantidade *</label>
+                        <input type="number" id="qtdeMov" required placeholder="Ex: 10">
+                    </div>
+
+                    <div class="admin-form-group">
+                        <button type="submit" id="cadEstoq" class="admin-btn">
+                            <i class="ri-save-line"></i>
+                            Cadastrar Movimento
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resEst" class="admin-message"></div>
+            </section>
+
+            <section class="admin-section">
+                <h2>
+                    <i class="ri-list-check-2"></i>
+                    Movimentos Recentes
+                </h2>
+
+                <div class="admin-table-container">
+                    <div id="resTabela"></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+</html>
